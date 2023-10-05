@@ -1,6 +1,15 @@
 {
     "compilerOptions": {
+        "target": "ES5",
+        "skipLibCheck": true,
+
         "jsx": "preserve",
-        "jsxImportSource": "solid-js"
+        "jsxImportSource": "solid-js",
+
+        "strict": true,
+
+        "module": "ESNext",
+        "moduleResolution": "bundler"
     },
+    "include": ["src"]
 }

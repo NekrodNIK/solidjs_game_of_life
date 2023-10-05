@@ -10,4 +10,4 @@ function App() {
   return <h1>Game Of Life, seconds: {getCount().toFixed(1)}</h1>
 }
 
-render(App, document.getElementById("root"))
+render(App, document.getElementById("root")!)
