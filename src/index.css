@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "Rubik";
+    src: url("./fonts/rubik-variable.ttf");
+}
+
+@font-face {
+    font-family: "Rubik";
+    font-style: italic;
+    src: url("./fonts/rubik-italic-variable.ttf");
+}
+
 :root {
-    font-family: sans-serif;
+    font-family: Rubik;
+    background-color: floralwhite;
+}
+
+#game_title {
+    text-align: center; 
 }
