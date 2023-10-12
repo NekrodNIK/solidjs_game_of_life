@@ -16,3 +16,18 @@
 #game_title {
     text-align: center; 
 }
+
+#grid {
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-template-columns: repeat(auto-fill, 1fr);
+}
+
+.cell {
+    background-color: red;
+    margin: 1px;
+    width: auto;
+    height: auto;
+}
