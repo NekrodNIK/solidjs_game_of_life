@@ -11,6 +11,20 @@
 
 :root {
     font-family: Rubik;
+    --page-padding: 8px;
+    --cell-size: 15px;
+}
+
+body {
+    margin: 0;
+}
+
+#page_wrapper {
+    height: calc(100vh - var(--page-padding)*2);
+    padding: var(--page-padding);
+
+    display: flex;
+    flex-direction: column;
 }
 
 #game_title {
@@ -19,8 +33,8 @@
 
 #grid {
     display: grid;
-    width: 300px;
-    height: 300px;
+    width: fit-content;
+    height: fit-content;
     grid-template-columns: repeat(auto-fit, 1fr);
     grid-template-columns: repeat(auto-fit, 1fr);
 }
@@ -28,6 +42,6 @@
 .cell {
     background-color: red;
     margin: 1px;
-    width: auto;
-    height: auto;
+    width: var(--cell-size);
+    height: var(--cell-size);
 }
