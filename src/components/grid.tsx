@@ -1,35 +1,43 @@
-import { createMutable } from "solid-js/store";
 import { For } from 'solid-js/web';
 import Cell from "./cell";
+import { JSX, children, onMount } from 'solid-js';
+import signals from "../signals"
 
-function gen_empty_field(x: number, y: number) {
-  let array: boolean[][] = new Array(y)
+function GridContainer(props: {children: JSX.Element}) {
+  const grid = children(() => props.children)
 
-  let sub_array: boolean[] = new Array(x)
-  sub_array.fill(false)
+  let ref: HTMLDivElement | undefined;
 
-  array.fill(sub_array)
-  return array
+  onMount(() => {
+    let size = [Math.floor(ref!.clientWidth/17), Math.floor(ref!.clientHeight/17)]
+    signals.setGridSize(size)
+  })
+
+  return (
+    <div id="grid-container" ref={ref}>
+      {grid()}
+    </div>
+  )
 }
 
-
-function Grid() {
-  var cell_status_grid = createMutable(gen_empty_field(10, 10))
+function Grid(props: {
+  cell_status_array: boolean[][]
+}) {
 
   return (
     <div id="grid">
-      <For each={cell_status_grid}>{(row_array, x) =>
-        <For each={row_array}>{(value, y) => {
+      <For each={props.cell_status_array}>{(row_array, x) =>
+        <For each={row_array}>{(cell_status, y) => {
           let position = {
             x: x()+1,
             y: y()+1
           }
           
-          return <Cell status={value} position={position}/>
+          return <Cell status={cell_status} position={position}/>
         }}</For>
       }</For>
     </div>
   )
 }
 
-export default Grid;
+export {GridContainer, Grid};
