@@ -9,8 +9,7 @@ function GridContainer(props: {children: JSX.Element}) {
   let ref: HTMLDivElement | undefined;
 
   onMount(() => {
-    let size = [Math.floor(ref!.clientWidth/17), Math.floor(ref!.clientHeight/17)]
-    signals.setGridSize(size)
+    signals.setGridSpacePixelSize([ref!.clientWidth, ref!.clientHeight])
   })
 
   return (

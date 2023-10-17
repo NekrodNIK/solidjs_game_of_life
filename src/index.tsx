@@ -20,7 +20,7 @@ function App() {
       <div id="page_wrapper">
         <h1 id="game_title">Game Of Life</h1>
         <GridContainer>
-          <Grid cell_status_array={gen_empty_field(signals.getGridSize()[0], signals.getGridSize()[1])}/>
+          <Grid cell_status_array={gen_empty_field(signals.gridSize()[0], signals.gridSize()[1])}/>
         </GridContainer>
       </div>
     </>

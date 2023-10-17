@@ -1,6 +1,11 @@
-import { createSignal } from "solid-js";
-import { createStore } from "solid-js/store";
+import { Signal, createSignal } from "solid-js";
 
-const [getGridSize, setGridSize] = createSignal([0, 0])
+const [gridSpacePixelSize, setGridSpacePixelSize] = createSignal([0, 0])
 
-export default {setGridSize, getGridSize}
+const gridSize = () => [Math.floor(gridSpacePixelSize()[0]/17), Math.floor(gridSpacePixelSize()[1]/17)] // TODO: refactor
+
+export default {
+    gridSpacePixelSize,
+    setGridSpacePixelSize,
+    gridSize
+}
