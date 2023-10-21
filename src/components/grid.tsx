@@ -1,7 +1,7 @@
 import { For } from 'solid-js/web';
 import Cell from "./cell";
 import { JSX, children, onMount } from 'solid-js';
-import signals from "../signals"
+import {setMainStore} from "../store"
 
 function GridContainer(props: {children: JSX.Element}) {
   const grid = children(() => props.children)
@@ -9,7 +9,14 @@ function GridContainer(props: {children: JSX.Element}) {
   let ref: HTMLDivElement | undefined;
 
   onMount(() => {
-    signals.setGridSpacePixelSize([ref!.clientWidth, ref!.clientHeight])
+    var resizeObserver = new ResizeObserver((entry) => {
+      setMainStore("gridSpacePixelSize", {
+        width: ref!.clientWidth, 
+        height: ref!.clientHeight
+      })
+    })
+
+    resizeObserver.observe(ref!)
   })
 
   return (

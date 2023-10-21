@@ -1,7 +1,7 @@
 import { render } from 'solid-js/web';
 import "./index.css";
 import { GridContainer, Grid } from './components/grid';
-import signals from "./signals"
+import {mainStore} from "./store"
 
 function gen_empty_field(x: number, y: number) {
   let array: boolean[][] = new Array(y)
@@ -20,8 +20,9 @@ function App() {
       <div id="page_wrapper">
         <h1 id="game_title">Game Of Life</h1>
         <GridContainer>
-          <Grid cell_status_array={gen_empty_field(signals.gridSize()[0], signals.gridSize()[1])}/>
+          <Grid cell_status_array={gen_empty_field(mainStore.gridSize.width, mainStore.gridSize.height)}/>
         </GridContainer>
+        <h5 style="text-align: end">{mainStore.gridSpacePixelSize.width}, {mainStore.gridSpacePixelSize.height}</h5>
       </div>
     </>
   )
