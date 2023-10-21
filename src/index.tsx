@@ -14,14 +14,15 @@ function gen_empty_field(x: number, y: number) {
 }
 
 function App() {
-
   return (
     <>
       <div id="page_wrapper">
         <h1 id="game_title">Game Of Life</h1>
+
         <GridContainer>
           <Grid cell_status_array={gen_empty_field(mainStore.gridSize.width, mainStore.gridSize.height)}/>
         </GridContainer>
+        
         <h5 style="text-align: end">{mainStore.gridSpacePixelSize.width}, {mainStore.gridSpacePixelSize.height}</h5>
       </div>
     </>
