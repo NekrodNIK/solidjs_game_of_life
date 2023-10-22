@@ -1,7 +1,9 @@
 import { For } from 'solid-js/web';
-import Cell from "./cell";
+import Cell from "../cell/cell";
 import { JSX, children, onMount } from 'solid-js';
-import {setMainStore} from "../store"
+import {setMainStore} from "../../store"
+
+import styles from "./grid.module.css"
 
 function GridContainer(props: {children: JSX.Element}) {
   const grid = children(() => props.children)
@@ -20,7 +22,7 @@ function GridContainer(props: {children: JSX.Element}) {
   })
 
   return (
-    <div id="grid-container" ref={ref}>
+    <div id={styles['grid-container']} ref={ref}>
       {grid()}
     </div>
   )
@@ -31,7 +33,7 @@ function Grid(props: {
 }) {
 
   return (
-    <div id="grid">
+    <div id={styles.grid}>
       <For each={props.cell_status_array}>{(row_array, x) =>
         <For each={row_array}>{(cell_status, y) => {
           let position = {

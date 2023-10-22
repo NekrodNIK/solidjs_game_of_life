@@ -12,7 +12,7 @@
 :root {
     font-family: Rubik;
     --page-padding: 8px;
-    --cell-size: 15px;
+
 }
 
 body {
@@ -29,29 +29,4 @@ body {
 
 #game_title {
     text-align: center; 
-}
-
-#grid-container {
-    height: 100%;
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-
-    overflow: auto;
-}
-
-#grid {
-    display: grid;
-    width: fit-content;
-    height: fit-content;
-    grid-template-columns: repeat(auto-fit, 1fr);
-    grid-template-columns: repeat(auto-fit, 1fr);
-}
-
-.cell {
-    background-color: red;
-    margin: 1px;
-    width: var(--cell-size);
-    height: var(--cell-size);
 }

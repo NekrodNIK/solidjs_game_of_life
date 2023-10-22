@@ -1,0 +1,17 @@
+#grid-container {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    overflow: auto;
+}
+
+#grid {
+    display: grid;
+    width: fit-content;
+    height: fit-content;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(auto-fit, 1fr);
+}

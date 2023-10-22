@@ -10,7 +10,9 @@
         "strict": true,
 
         "module": "ESNext",
-        "moduleResolution": "bundler"
+        "moduleResolution": "bundler",
+        
+        "plugins": [{ "name": "typescript-plugin-css-modules" }]
     },
     "include": ["src"]
 }

@@ -1,0 +1,18 @@
+:root {
+    --cell-size: 15px;
+}
+
+.cell {
+    background-color: red;
+    margin: 1px;
+    width: var(--cell-size);
+    height: var(--cell-size);
+}
+
+.cell-alive {
+
+}
+
+.cell-dead {
+    
+}

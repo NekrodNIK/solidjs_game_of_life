@@ -1,7 +1,8 @@
 import { render } from 'solid-js/web';
-import "./index.css";
-import { GridContainer, Grid } from './components/grid';
+import { GridContainer, Grid } from './components/grid/grid';
 import {mainStore} from "./store"
+
+import "./index.css"
 
 function gen_empty_field(x: number, y: number) {
   let array: boolean[][] = new Array(y)
@@ -22,7 +23,7 @@ function App() {
         <GridContainer>
           <Grid cell_status_array={gen_empty_field(mainStore.gridSize.width, mainStore.gridSize.height)}/>
         </GridContainer>
-        
+
         <h5 style="text-align: end">{mainStore.gridSpacePixelSize.width}, {mainStore.gridSpacePixelSize.height}</h5>
       </div>
     </>
