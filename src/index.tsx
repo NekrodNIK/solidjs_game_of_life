@@ -3,6 +3,8 @@ import { GridContainer, Grid } from './components/grid/grid';
 import {mainStore} from "./store"
 
 import "./index.css"
+import { ControlBlock } from './components/control/control';
+import { onMount } from 'solid-js';
 
 function gen_empty_field(x: number, y: number) {
   let array: boolean[][] = new Array(y)
@@ -15,6 +17,7 @@ function gen_empty_field(x: number, y: number) {
 }
 
 function App() {
+
   return (
     <>
       <div id="page_wrapper">
@@ -24,7 +27,8 @@ function App() {
           <Grid cell_status_array={gen_empty_field(mainStore.gridSize.width, mainStore.gridSize.height)}/>
         </GridContainer>
 
-        <h5 style="text-align: end">{mainStore.gridSpacePixelSize.width}, {mainStore.gridSpacePixelSize.height}</h5>
+        <h5 style="text-align: end">{mainStore.availableGridSpacePixels.width}, {mainStore.availableGridSpacePixels.height}</h5>
+        <ControlBlock/>
       </div>
     </>
   )

@@ -12,7 +12,7 @@ function GridContainer(props: {children: JSX.Element}) {
 
   onMount(() => {
     var resizeObserver = new ResizeObserver((entry) => {
-      setMainStore("gridSpacePixelSize", {
+      setMainStore("availableGridSpacePixels", {
         width: ref!.clientWidth, 
         height: ref!.clientHeight
       })
